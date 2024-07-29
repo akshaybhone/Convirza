@@ -1,0 +1,60 @@
+package utilities;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+
+public class Dataproviders {
+	
+	//DataProvider  1
+	
+	@DataProvider(name="Logindata")
+	public String [][] getLogindata() throws IOException
+	{
+		String path = ".\\testdata\\Convirza_Logindata.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("Sheet1");
+		int totalcols = xlutil.getCellCount("Sheet1", 1);
+		
+		String logindata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				logindata [i-1][j]= xlutil.getCellData("Sheet1", i, j);
+			}
+		}
+		
+		return logindata; //returning two dimensional array
+		
+		
+	}
+	
+	@DataProvider(name="groupAndUserData")
+	public String [][] getdata() throws IOException
+	{
+		String path = ".\\testdata\\group_and_user.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("group_details");
+		int totalcols = xlutil.getCellCount("group_details", 1);
+		
+		String logindata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				logindata [i-1][j]= xlutil.getCellData("group_details", i, j);
+			}
+		}
+		
+		return logindata; //returning two dimensional array
+		
+		
+	}
+	
+
+}

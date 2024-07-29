@@ -92,6 +92,7 @@ public class GroupsAndUsersTest extends BaseTest {
 	public void editGroup() {
 		
 		groupsanduserpage.click_OnGroupName();
+		System.out.println("first push");
 	}
 
 }

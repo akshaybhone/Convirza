@@ -93,6 +93,7 @@ public class GroupsAndUsersTest extends BaseTest {
 		
 		groupsanduserpage.click_OnGroupName();
 		System.out.println("first push");
+		System.out.println("second push");
 	}
 
 }

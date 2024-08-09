@@ -67,7 +67,8 @@ public class GroupsAndUserPage {
 	WebElement refreshbutton;
 	@FindBy(xpath = "//td[@class='cdk-cell cdk-column-org_unit_name ng-star-inserted']")
 	WebElement getGroupname;
-	
+	@FindBy(xpath = "//button[normalize-space()='Save']")
+	WebElement SubGroup_SaveButton;
 	
 	
 	
@@ -176,6 +177,8 @@ public class GroupsAndUserPage {
 	
 	public boolean successMessage_AvailabiltyTest() {
 		try {
+			String SuccessToastMessage = Success_Toast_Message.getText();
+			System.out.println(SuccessToastMessage);
 			boolean Success_Message = Success_Toast_Message.isDisplayed();
 			return Success_Message;
 		} catch (Exception e) {
@@ -262,6 +265,28 @@ public class GroupsAndUserPage {
 			getGroupname.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to get Group name");
+		}
+
+	}
+	
+	public void updateGroupName() {
+		// javascriptutils.scrollIntoView(ParentGroupdropdown);
+		try {
+			GroupName.clear();
+			//String genaerateGroupname = "AutoGroup_" + elementutils.RandomeNumber();
+			
+			GroupName.sendKeys(editedGroupName);
+		} catch (Exception e) {
+			System.out.println("user is unable to click on grouupname");
+		}
+
+	}
+	public void clickOn_SubGroup_SaveButton() {
+		javascriptutils.scrollIntoView(SubGroup_SaveButton);
+		try {
+			SubGroup_SaveButton.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on Save button");
 		}
 
 	}

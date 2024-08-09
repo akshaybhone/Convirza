@@ -92,6 +92,8 @@ public class GroupsAndUsersTest extends BaseTest {
 	public void editGroup() {
 		
 		groupsanduserpage.click_OnGroupName();
+		groupsanduserpage.updateGroupName();
+		groupsanduserpage.clickOn_SubGroup_SaveButton();
 		System.out.println("first push");
 		System.out.println("second push");
 	}

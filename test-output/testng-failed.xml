@@ -6,11 +6,9 @@
       <class name="testCases.GroupsAndUsersTest">
         <methods>
           <include name="groupgrid"/>
-          <include name="createGroupTest"/>
-          <include name="groupsAndUserPageNavigationTest"/>
+          <include name="createGroupTest" invocation-numbers="0"/>
           <include name="groupAndUserSetup"/>
           <include name="setup"/>
-          <include name="groupsAndUserHeaderTest"/>
         </methods>
       </class> <!-- testCases.GroupsAndUsersTest -->
     </classes>

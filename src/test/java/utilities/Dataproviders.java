@@ -27,9 +27,7 @@ public class Dataproviders {
 			}
 		}
 		
-		return logindata; //returning two dimensional array
-		
-		
+		return logindata; //returning two dimensional array	
 	}
 	
 	@DataProvider(name="groupAndUserData")
@@ -38,22 +36,42 @@ public class Dataproviders {
 		String path = ".\\testdata\\group_and_user.xlsx"; //Taking Excel file from testdata.
 		
 		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
-		
+
 		int totalrows = xlutil.getRowCount("group_details");
 		int totalcols = xlutil.getCellCount("group_details", 1);
 		
-		String logindata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		String groupdata [][]= new String[totalrows][totalcols];	//created for two dimension array 
 		
 		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
 			
 			for (int j = 0; j < totalcols; j++) {		// j=columns
-				logindata [i-1][j]= xlutil.getCellData("group_details", i, j);
+				groupdata [i-1][j]= xlutil.getCellData("group_details", i, j);
 			}
 		}
 		
-		return logindata; //returning two dimensional array
+		return groupdata; //returning two dimensional array
+	}
+	
+	@DataProvider(name="UserData")
+	public String [][] getuserdata() throws IOException
+	{
+		String path = ".\\testdata\\group_and_user.xlsx"; //Taking Excel file from testdata.
 		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+
+		int totalrows = xlutil.getRowCount("user_details");
+		int totalcols = xlutil.getCellCount("user_details", 1);
 		
+		String userdata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				userdata [i-1][j]= xlutil.getCellData("user_details", i, j);
+			}
+		}
+		
+		return userdata; //returning two dimensional array
 	}
 	
 

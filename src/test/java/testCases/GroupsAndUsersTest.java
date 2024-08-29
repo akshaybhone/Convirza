@@ -32,7 +32,7 @@ public class GroupsAndUsersTest extends BaseTest {
 
 	}
 
-	@Description("To Verify Clicking on GroupsAndUser module user navigates to GroupsAndUser Page >> Product Screen.")
+	@Description("To Verify Clicking on GroupsAndUser module user navigates to GroupsAndUser Page.")
 	@Test(priority = 1, enabled = true)
 	public void groupsAndUserPageNavigationTest() {
 		// loginpage = new LoginPage(driver);
@@ -75,7 +75,7 @@ public class GroupsAndUsersTest extends BaseTest {
 	public void groupgrid() {
 		groupsanduserpage.clickOn_DoneButton();
 		groupsanduserpage.clickOn_FilterButton();
-		groupsanduserpage.clickON_GroupFilter();
+		groupsanduserpage.clickOn_GroupFilter();
 		groupsanduserpage.ClickOn_groupNameDropdown();
 		groupsanduserpage.selectFilter();
 		groupsanduserpage.ClickOn_RefreshButton();
@@ -87,15 +87,63 @@ public class GroupsAndUsersTest extends BaseTest {
 		// groupsanduserpage.grid();
 	}
 	
-	@Description("To verify useris able to edit the created group")
+	@Description("To verify user is able to edit the created group")
 	@Test(priority=5,enabled=true)
 	public void editGroup() {
 		
 		groupsanduserpage.click_OnGroupName();
 		groupsanduserpage.updateGroupName();
 		groupsanduserpage.clickOn_SubGroup_SaveButton();
+	//	(//p[text()='Group Updated Successfully'])[1]
 		System.out.println("first push");
 		System.out.println("second push");
+		Assert.assertEquals(groupsanduserpage.UpdatetoastMessage_AvailabiltyTest(), true);
 	}
+	
+	@Description("To verify edited group is present on grid or not.")
+	@Test(priority = 6, enabled = true)
+	public void editedgroupongrid() {
+		groupsanduserpage.clickOn_FilterButton();
+		groupsanduserpage.clickOn_GroupFilter();
+		groupsanduserpage.ClickOn_groupNameDropdown();
+		groupsanduserpage.selecteditgroupFilter();
+		groupsanduserpage.ClickOn_RefreshButton();
+		//groupsanduserpage.getgroupName();
+		String groupname = groupsanduserpage.returneditedGroupName();
+		System.out.println(groupname);
+		Assert.assertEquals(groupsanduserpage.getgroupName(), groupname);
+		//Assert.assertEquals(groupsanduserpage.getgroupName(), groupsanduserpage.returnGroupName());
+		// groupsanduserpage.grid();
+	}
+	
+	@Description("To verify user is able to delete the created group")
+	@Test(priority = 7, enabled = true)
+	public void deletegroupongrid() {
+		groupsanduserpage.click_OnGroupName();
+		groupsanduserpage.clickOn_Deletebutton();
+		groupsanduserpage.clickOn_ConfirmDeletebutton();
+		Assert.assertEquals(groupsanduserpage.deletetoastMessage_AvailabiltyTest(), true);
+		
+	}
+	
+	@Description("To verify user is able to add user")
+	@Test(priority = 8, enabled = true, dataProvider = "UserData", dataProviderClass = Dataproviders.class)
+	public void createUserTest(String lastname, String usergroup, String userrole ) {
+		groupsanduserpage.clickOnuserTab();
+		groupsanduserpage.ClickOnCreateButton();
+		groupsanduserpage.clickOnuserbutton();
+		groupsanduserpage.ClickOnNextButton();
+		groupsanduserpage.enterFirstName();
+		groupsanduserpage.enterlastName(lastname);
+		groupsanduserpage.clickOnemailtextfield();
+		groupsanduserpage.enteremail();
+		groupsanduserpage.selectusergroup(usergroup);
+		groupsanduserpage.selectuserrole(userrole);
+		groupsanduserpage.clickOn_user_NextButton();
+		Assert.assertEquals(groupsanduserpage.usercreatedMessage_AvailabiltyTest(), true);
+
+	}
+	
+	
 
 }

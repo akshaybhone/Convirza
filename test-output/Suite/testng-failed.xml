@@ -2,17 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
-    <parameter name="os" value="windows"/>
-    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.LoginDataDrivenTest">
+      <class name="testCases.GroupsAndUsersTest">
         <methods>
-          <include name="validloginTest"/>
+          <include name="groupAndUserSetup"/>
+          <include name="editedgroupongrid"/>
           <include name="setup"/>
-          <include name="teardown"/>
-          <include name="verify_loginDDTest"/>
         </methods>
-      </class> <!-- testCases.LoginDataDrivenTest -->
+      </class> <!-- testCases.GroupsAndUsersTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

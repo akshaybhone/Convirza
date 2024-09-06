@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,7 +55,7 @@ public class GroupsAndUserPage {
 	@FindBy(xpath = "(//p[text()='Group Created Successfully'])[1]")
 	WebElement Success_Toast_Message;
 	@FindBy(xpath = "(//p[text()='Group Updated Successfully'])[1]")
-	WebElement Update_Toast_Message;
+	WebElement GrpUpdate_Toast_Message;
 	@FindBy(xpath = "//button[text()='Done']")
 	WebElement SubGroup_Donebutton;
 	@FindBy(xpath = "(//div[normalize-space()='Group Name'])[1]")
@@ -70,13 +71,13 @@ public class GroupsAndUserPage {
 	@FindBy(xpath = "//td[@class='cdk-cell cdk-column-org_unit_name ng-star-inserted']")
 	WebElement getGroupname;
 	@FindBy(xpath = "//button[normalize-space()='Save']")
-	WebElement SubGroup_SaveButton;
+	WebElement SaveButton;
 	@FindBy(xpath = "//button[normalize-space()='Delete']")
 	WebElement DeleteGroupbtn;
 	@FindBy(xpath = "//button[@class='deletePopUser confirmation-btn']")
 	WebElement ConfirmDeletebtn;
 	@FindBy(xpath = "(//p[text()='Group Deleted Successfully'])[3]")
-	WebElement Deletetoastmessage;
+	WebElement GroupDeletetoastmessage;
 	@FindBy(xpath = "//div[@class='mat-tab-label-content'][normalize-space()='Users']")
 	WebElement Usertab;
 	@FindBy(xpath = "//div[normalize-space()='User']")
@@ -101,15 +102,31 @@ public class GroupsAndUserPage {
 	WebElement User_createdtoastmessage;
 	@FindBy(xpath = "//div[@class='successtext']")
 	WebElement User_createdsuccessmessage;
+	@FindBy(xpath = "//button[text()='Done']")
+	WebElement User_DoneButton;
+	@FindBy(xpath = "//div[text()=' Email ']")
+	WebElement User_email;
+	@FindBy(xpath = "//input[(@name='filterValue') and (@size='0')]")
+	WebElement email_dropdwn;
+	@FindBy(xpath = "//span[@class='mat-option-text']")
+	List<WebElement> Useremail_List;
+	@FindBy(xpath = "//td[@class='cdk-cell cdk-column-username ng-star-inserted']")
+	WebElement useremailele;
+	@FindBy(xpath = "(//p[text()='User Updated Successfully'])[1]")
+	WebElement UserUpdate_ToastMessage;
+	@FindBy(xpath = "(//p[text()='User Deleted Successfully'])[1]")
+	WebElement UserDeletetoastmessage;
 	
+	
+
+	By eamildropdown = By.xpath("//input[(@name='filterValue') and (@size='0')]");
 
 	public String genaerateGroupname = "AutoGrp" + BaseTest.RandomeNumber();
 	public String editedGroupName = "edit" + genaerateGroupname;
-	
+
 	public String firstname = "Test" + BaseTest.RandomeAlphanumeric();
-	public String email = BaseTest.RandomeString()+"@gmail.com";
-	
-	
+	public String email = BaseTest.RandomeString().toLowerCase() + "@gmail.com";
+	public String editedemail = "v1" + BaseTest.RandomeString().toLowerCase() + "@gmail.com";
 
 	// Actions
 
@@ -264,7 +281,7 @@ public class GroupsAndUserPage {
 
 	}
 
-	public void selectFilter() {
+	public void selectGroupName() {
 		// javascriptutils.scrollIntoView(ParentGroupdropdown);
 		try {
 			elementutils.selectDropdownValue(ListOfGroupname, genaerateGroupname);
@@ -276,6 +293,7 @@ public class GroupsAndUserPage {
 
 	public void ClickOn_RefreshButton() {
 		try {
+			// driver.wait(3000);
 			refreshbutton.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to click on Refresh button");
@@ -317,22 +335,22 @@ public class GroupsAndUserPage {
 
 	}
 
-	public void clickOn_SubGroup_SaveButton() {
-		javascriptutils.scrollIntoView(SubGroup_SaveButton);
+	public void clickOn_SaveButton() {
+		javascriptutils.scrollIntoView(SaveButton);
 		try {
-			SubGroup_SaveButton.click();
+			SaveButton.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to click on Save button");
 		}
 
 	}
 
-	public boolean UpdatetoastMessage_AvailabiltyTest() {
+	public boolean GroupUpdatetoastMessage_AvailabiltyTest() {
 		try {
-			
-			String Update_ToastMessage = Update_Toast_Message.getText();
+
+			String Update_ToastMessage = GrpUpdate_Toast_Message.getText();
 			System.out.println(Update_ToastMessage);
-			boolean Update_Message = Update_Toast_Message.isDisplayed();
+			boolean Update_Message = GrpUpdate_Toast_Message.isDisplayed();
 			return Update_Message;
 		} catch (Exception e) {
 			System.out.println("update toast message is not available");
@@ -359,7 +377,7 @@ public class GroupsAndUserPage {
 		}
 
 	}
-	
+
 	public void clickOn_ConfirmDeletebutton() {
 		try {
 			ConfirmDeletebtn.click();
@@ -368,12 +386,12 @@ public class GroupsAndUserPage {
 		}
 
 	}
-	
-	public boolean deletetoastMessage_AvailabiltyTest() {
+
+	public boolean groupdeletetoastMessage_AvailabiltyTest() {
 		try {
-			String delete_Message = Deletetoastmessage.getText();
+			String delete_Message = GroupDeletetoastmessage.getText();
 			System.out.println(delete_Message);
-			boolean delete_ToastMessage = Deletetoastmessage.isDisplayed();
+			boolean delete_ToastMessage = GroupDeletetoastmessage.isDisplayed();
 			return delete_ToastMessage;
 		} catch (Exception e) {
 			System.out.println("update toast message is not available");
@@ -382,6 +400,19 @@ public class GroupsAndUserPage {
 
 	}
 	
+	public boolean userdeletetoastMessage_AvailabiltyTest() {
+		try {
+			String delete_Message = UserDeletetoastmessage.getText();
+			System.out.println(delete_Message);
+			boolean delete_ToastMessage = UserDeletetoastmessage.isDisplayed();
+			return delete_ToastMessage;
+		} catch (Exception e) {
+			System.out.println("user delete toast message is not available");
+			return false;
+		}
+
+	}
+
 	public void clickOnuserTab() {
 		try {
 			Usertab.click();
@@ -389,7 +420,7 @@ public class GroupsAndUserPage {
 			System.out.println("usertab is not available");
 		}
 	}
-	
+
 	public void clickOnuserbutton() {
 		try {
 			Userbutton.click();
@@ -397,7 +428,7 @@ public class GroupsAndUserPage {
 			System.out.println("user button is not available");
 		}
 	}
-	
+
 	public void enterFirstName() {
 		try {
 			Firstname.sendKeys(firstname);
@@ -405,7 +436,7 @@ public class GroupsAndUserPage {
 			System.out.println("First Name textfield is not available");
 		}
 	}
-	
+
 	public void enterlastName(String lastname) {
 		try {
 			Lastname.sendKeys(lastname);
@@ -414,7 +445,7 @@ public class GroupsAndUserPage {
 		}
 		// javascriptutils.scrollIntoView(Nextbutton);
 	}
-	
+
 	public void clickOnemailtextfield() {
 		try {
 			Emailtxtfield.click();
@@ -422,7 +453,7 @@ public class GroupsAndUserPage {
 			System.out.println("email textfield is not available");
 		}
 	}
-	
+
 	public void enteremail() {
 		try {
 			Emailtxtfield.sendKeys(email);
@@ -430,7 +461,7 @@ public class GroupsAndUserPage {
 			System.out.println("First Name textfield is not available");
 		}
 	}
-	
+
 	public void selectusergroup(String usergroup) {
 		// javascriptutils.scrollIntoView(ParentGroupdropdown);
 		try {
@@ -458,6 +489,7 @@ public class GroupsAndUserPage {
 			System.out.println("user is unable to select userrole from dropdown");
 		}
 	}
+
 	public void clickOn_user_NextButton() {
 		javascriptutils.scrollIntoView(User_NextButton);
 		try {
@@ -466,12 +498,13 @@ public class GroupsAndUserPage {
 			System.out.println("user is unable to click on Next button");
 		}
 	}
+
 	public boolean usercreatedMessage_AvailabiltyTest() {
 		try {
 			String usercreated_Message = User_createdtoastmessage.getText();
 			System.out.println(usercreated_Message);
 			boolean usercreated_SuccessMessage = User_createdtoastmessage.isDisplayed();
-			String userSuccessMessage=User_createdsuccessmessage.getText();
+			String userSuccessMessage = User_createdsuccessmessage.getText();
 			System.out.println(userSuccessMessage);
 			return usercreated_SuccessMessage;
 		} catch (Exception e) {
@@ -479,5 +512,112 @@ public class GroupsAndUserPage {
 			return false;
 		}
 
+	}
+
+	public void clickOn_emailFilter() {
+		try {
+			User_email.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on email filter option");
+		}
+
+	}
+
+	public void clickOn_emailDropdown() {
+		try {
+			elementutils.waitToDisplayElement(eamildropdown);
+			email_dropdwn.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on email drodown");
+		}
+
+	}
+
+	public void selectUseremail() {
+		// javascriptutils.scrollIntoView(ParentGroupdropdown);
+		try {
+			elementutils.selectDropdownValue(Useremail_List, email);
+		} catch (Exception e) {
+			System.out.println("user is unable to select user email from dropdown");
+		}
+
+	}
+
+	public String return_emailID() {
+
+		String emailID = email.toLowerCase();
+
+		// System.out.println("from return groupname"+returngroupName);
+
+		return emailID;
+	}
+
+	public String getuseremail() {
+		String useremail = null;
+		try {
+			Thread.sleep(3000);
+			useremail = useremailele.getText();
+			System.out.println("The email is : " + useremail);
+		} catch (Exception e) {
+			System.out.println("user is unable to get Group name");
+		}
+		return useremail;
+	}
+
+	public void clickOn_email() {
+		try {
+			elementutils.waitToDisplayElement(eamildropdown);
+			useremailele.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on email ");
+		}
+
+	}
+
+	public void updateuseremail() {
+		// javascriptutils.scrollIntoView(ParentGroupdropdown);
+		try {
+			Thread.sleep(3000);
+			Emailtxtfield.clear();
+			// String genaerateGroupname = "AutoGroup_" + elementutils.RandomeNumber();
+
+			Emailtxtfield.sendKeys(editedemail);
+		} catch (Exception e) {
+			System.out.println("user is unable to click on email textfield");
+		}
+
+	}
+
+	public boolean UserUpdatetoastMessage_AvailabiltyTest() {
+		try {
+
+			String Update_ToastMessage = UserUpdate_ToastMessage.getText();
+			System.out.println(Update_ToastMessage);
+			boolean Update_Message = UserUpdate_ToastMessage.isDisplayed();
+			return Update_Message;
+		} catch (Exception e) {
+			System.out.println("User update toast message is not available");
+			return false;
+		}
+
+	}
+
+	public void select_editedUseremail() {
+		// javascriptutils.scrollIntoView(ParentGroupdropdown);
+		try {
+			elementutils.selectDropdownValue(Useremail_List, editedemail);
+		} catch (Exception e) {
+			System.out.println("user is unable to select edited user email from dropdown");
+		}
+
+	}
+
+	public String return_editemailID() {
+
+		String editedemailID = editedemail.toLowerCase();
+
+		// System.out.println("from return groupname"+returngroupName);
+
+		return editedemailID;
 	}
 }

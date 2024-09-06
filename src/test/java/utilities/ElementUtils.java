@@ -1,15 +1,20 @@
 package utilities;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ElementUtils {
 	
 	public WebDriver driver;
+	public JavaScriptUtils javascriptutils;;
 
 	// Constructor
 	public ElementUtils(WebDriver driver) {
@@ -17,7 +22,7 @@ public class ElementUtils {
 
 		this.driver=driver; 
 		PageFactory.initElements(driver, this);
-		 
+		javascriptutils = new JavaScriptUtils(driver);
 	}
 	
 	/*
@@ -38,21 +43,28 @@ public class ElementUtils {
 	 * @param locator
 	 * @param value
 	 */
-	public void selectDropdownValue(List<WebElement> locator, String value ) {
+	public void selectDropdownValue(List<WebElement> locator , String value ) {
 		//List<WebElement> drodownlist = locator;
 		System.out.println("Size of the dropdown list is:"+ locator.size());
 		System.out.println("DropDown options are: ");
 		for(WebElement e : locator) {
 			//System.out.println(e.getText());
-			if(e.getText().equals(value)) {
+			if(e.getText().equalsIgnoreCase(value)) {
 				System.out.println(e.getText());
-				e.click();
+				javascriptutils.clickOnElement(e);
+				//e.click();
 				break;
 			}
 		}
 	}
 	
+	public void waitToDisplayElement(By findBy) {
+		
+		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	
+	}
+		
 	public String RandomeString() {
 		String generatedString = RandomStringUtils.randomAlphabetic(5);
 		return generatedString;

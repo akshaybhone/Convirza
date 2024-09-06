@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-29T13:08:16 IST" name="Default suite" finished-at="2024-08-29T13:09:12 IST" duration-ms="55713">
+  <suite started-at="2024-09-05T17:05:45 IST" name="Default suite" finished-at="2024-09-05T17:07:08 IST" duration-ms="83082">
     <groups>
     </groups>
-    <test started-at="2024-08-29T13:08:16 IST" name="Default test" finished-at="2024-08-29T13:09:12 IST" duration-ms="55713">
+    <test started-at="2024-09-05T17:05:45 IST" name="Default test" finished-at="2024-09-05T17:07:08 IST" duration-ms="83082">
       <class name="testCases.GroupsAndUsersTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:16 IST" name="setup" finished-at="2024-08-29T13:08:38 IST" duration-ms="21221" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:05:45 IST" name="setup" finished-at="2024-09-05T17:06:11 IST" duration-ms="26038" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="groupAndUserSetup()[pri:0, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:38 IST" name="groupAndUserSetup" finished-at="2024-08-29T13:08:40 IST" duration-ms="1890" status="PASS">
+        <test-method is-config="true" signature="groupAndUserSetup()[pri:0, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:11 IST" name="groupAndUserSetup" finished-at="2024-09-05T17:06:13 IST" duration-ms="1822" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupAndUserSetup -->
-        <test-method signature="groupsAndUserPageNavigationTest()[pri:1, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:40 IST" name="groupsAndUserPageNavigationTest" finished-at="2024-08-29T13:08:42 IST" duration-ms="1959" status="PASS">
+        <test-method signature="groupsAndUserPageNavigationTest()[pri:1, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:13 IST" name="groupsAndUserPageNavigationTest" finished-at="2024-09-05T17:06:15 IST" duration-ms="2348" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupsAndUserPageNavigationTest -->
-        <test-method signature="groupsAndUserHeaderTest()[pri:2, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:42 IST" name="groupsAndUserHeaderTest" finished-at="2024-08-29T13:08:43 IST" duration-ms="1022" status="PASS">
+        <test-method signature="groupsAndUserHeaderTest()[pri:2, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:15 IST" name="groupsAndUserHeaderTest" finished-at="2024-09-05T17:06:16 IST" duration-ms="788" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupsAndUserHeaderTest -->
-        <test-method signature="createGroupTest(java.lang.String,java.lang.String)[pri:3, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:44 IST" name="createGroupTest" data-provider="groupAndUserData" finished-at="2024-08-29T13:08:49 IST" duration-ms="4378" status="PASS">
+        <test-method signature="createGroupTest(java.lang.String,java.lang.String)[pri:3, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:18 IST" name="createGroupTest" data-provider="groupAndUserData" finished-at="2024-09-05T17:06:24 IST" duration-ms="6072" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,23 +39,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createGroupTest -->
-        <test-method signature="groupgrid()[pri:4, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:49 IST" name="groupgrid" finished-at="2024-08-29T13:08:54 IST" duration-ms="5748" status="PASS">
+        <test-method signature="groupgrid()[pri:4, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:24 IST" name="groupgrid" finished-at="2024-09-05T17:06:30 IST" duration-ms="6338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupgrid -->
-        <test-method signature="editGroup()[pri:5, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:54 IST" name="editGroup" finished-at="2024-08-29T13:08:59 IST" duration-ms="4493" status="PASS">
+        <test-method signature="editGroup()[pri:5, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:30 IST" name="editGroup" finished-at="2024-09-05T17:06:35 IST" duration-ms="4636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editGroup -->
-        <test-method signature="editedgroupongrid()[pri:6, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:08:59 IST" name="editedgroupongrid" finished-at="2024-08-29T13:09:05 IST" duration-ms="6346" status="PASS">
+        <test-method signature="editedgroupongrid()[pri:6, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:35 IST" name="editedgroupongrid" finished-at="2024-09-05T17:06:41 IST" duration-ms="6229" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editedgroupongrid -->
-        <test-method signature="deletegroupongrid()[pri:7, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:09:05 IST" name="deletegroupongrid" finished-at="2024-08-29T13:09:07 IST" duration-ms="2195" status="PASS">
+        <test-method signature="deletegroupongrid()[pri:7, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:41 IST" name="deletegroupongrid" finished-at="2024-09-05T17:06:43 IST" duration-ms="2281" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deletegroupongrid -->
-        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:8, instance:testCases.GroupsAndUsersTest@f0e995e]" started-at="2024-08-29T13:09:08 IST" name="createUserTest" data-provider="UserData" finished-at="2024-08-29T13:09:12 IST" duration-ms="4151" status="PASS">
+        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:8, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:44 IST" name="createUserTest" data-provider="UserData" finished-at="2024-09-05T17:06:48 IST" duration-ms="4677" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,6 +76,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserTest -->
+        <test-method signature="Usergrid()[pri:9, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:48 IST" name="Usergrid" finished-at="2024-09-05T17:06:55 IST" duration-ms="6630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Usergrid -->
+        <test-method signature="edituser()[pri:10, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:55 IST" name="edituser" finished-at="2024-09-05T17:07:00 IST" duration-ms="4729" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edituser -->
+        <test-method signature="editUsergrid()[pri:11, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:07:00 IST" name="editUsergrid" finished-at="2024-09-05T17:07:06 IST" duration-ms="6413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editUsergrid -->
+        <test-method signature="deleteuserongrid()[pri:12, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:07:06 IST" name="deleteuserongrid" finished-at="2024-09-05T17:07:08 IST" duration-ms="1558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteuserongrid -->
       </class> <!-- testCases.GroupsAndUsersTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

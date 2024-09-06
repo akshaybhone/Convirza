@@ -5,9 +5,17 @@
     <classes>
       <class name="testCases.GroupsAndUsersTest">
         <methods>
+          <include name="groupgrid"/>
+          <include name="Usergrid"/>
+          <include name="createGroupTest"/>
+          <include name="createUserTest"/>
+          <include name="editGroup"/>
           <include name="groupAndUserSetup"/>
+          <include name="groupsAndUserPageNavigationTest"/>
+          <include name="deletegroupongrid"/>
           <include name="editedgroupongrid"/>
           <include name="setup"/>
+          <include name="groupsAndUserHeaderTest"/>
         </methods>
       </class> <!-- testCases.GroupsAndUsersTest -->
     </classes>

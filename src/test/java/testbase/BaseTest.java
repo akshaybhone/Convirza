@@ -4,15 +4,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.DashboardPage;
@@ -78,7 +74,7 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		// driver.get("https://stag-5-cai.convirza.com/login");
-		// driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		
 		driver.get(p.getProperty("appBetaURL"));
 		// driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();

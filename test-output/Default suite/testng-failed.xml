@@ -3,21 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.GroupsAndUsersTest">
+      <class name="testCases.CampaignsTest">
         <methods>
-          <include name="groupgrid"/>
-          <include name="Usergrid"/>
-          <include name="createGroupTest"/>
-          <include name="createUserTest"/>
-          <include name="editGroup"/>
+          <include name="cmapaignPageNavigationTest"/>
           <include name="groupAndUserSetup"/>
-          <include name="groupsAndUserPageNavigationTest"/>
-          <include name="deletegroupongrid"/>
-          <include name="editedgroupongrid"/>
           <include name="setup"/>
-          <include name="groupsAndUserHeaderTest"/>
         </methods>
-      </class> <!-- testCases.GroupsAndUsersTest -->
+      </class> <!-- testCases.CampaignsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-05T17:05:45 IST" name="Default suite" finished-at="2024-09-05T17:07:08 IST" duration-ms="83082">
+  <suite started-at="2024-10-10T13:16:58 IST" name="Suite" finished-at="2024-10-10T13:19:16 IST" duration-ms="138384">
     <groups>
     </groups>
-    <test started-at="2024-09-05T17:05:45 IST" name="Default test" finished-at="2024-09-05T17:07:08 IST" duration-ms="83082">
+    <test started-at="2024-10-10T13:16:58 IST" name="Test" finished-at="2024-10-10T13:19:16 IST" duration-ms="138384">
       <class name="testCases.GroupsAndUsersTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:05:45 IST" name="setup" finished-at="2024-09-05T17:06:11 IST" duration-ms="26038" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:17:29 IST" name="setup" finished-at="2024-10-10T13:17:46 IST" duration-ms="16750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="groupAndUserSetup()[pri:0, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:11 IST" name="groupAndUserSetup" finished-at="2024-09-05T17:06:13 IST" duration-ms="1822" status="PASS">
+        <test-method is-config="true" signature="groupAndUserSetup()[pri:0, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:17:46 IST" name="groupAndUserSetup" finished-at="2024-10-10T13:17:49 IST" duration-ms="3207" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupAndUserSetup -->
-        <test-method signature="groupsAndUserPageNavigationTest()[pri:1, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:13 IST" name="groupsAndUserPageNavigationTest" finished-at="2024-09-05T17:06:15 IST" duration-ms="2348" status="PASS">
+        <test-method signature="groupsAndUserPageNavigationTest()[pri:1, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:17:49 IST" name="groupsAndUserPageNavigationTest" finished-at="2024-10-10T13:17:53 IST" duration-ms="3665" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupsAndUserPageNavigationTest -->
-        <test-method signature="groupsAndUserHeaderTest()[pri:2, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:15 IST" name="groupsAndUserHeaderTest" finished-at="2024-09-05T17:06:16 IST" duration-ms="788" status="PASS">
+        <test-method signature="groupsAndUserHeaderTest()[pri:2, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:17:53 IST" name="groupsAndUserHeaderTest" finished-at="2024-10-10T13:17:53 IST" duration-ms="81" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupsAndUserHeaderTest -->
-        <test-method signature="createGroupTest(java.lang.String,java.lang.String)[pri:3, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:18 IST" name="createGroupTest" data-provider="groupAndUserData" finished-at="2024-09-05T17:06:24 IST" duration-ms="6072" status="PASS">
+        <test-method signature="createGroupTest(java.lang.String,java.lang.String)[pri:3, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:17:56 IST" name="createGroupTest" data-provider="groupAndUserData" finished-at="2024-10-10T13:18:01 IST" duration-ms="5387" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,23 +39,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createGroupTest -->
-        <test-method signature="groupgrid()[pri:4, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:24 IST" name="groupgrid" finished-at="2024-09-05T17:06:30 IST" duration-ms="6338" status="PASS">
+        <test-method signature="groupgrid()[pri:4, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:01 IST" name="groupgrid" finished-at="2024-10-10T13:18:07 IST" duration-ms="5934" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupgrid -->
-        <test-method signature="editGroup()[pri:5, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:30 IST" name="editGroup" finished-at="2024-09-05T17:06:35 IST" duration-ms="4636" status="PASS">
+        <test-method signature="editGroup()[pri:5, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:09 IST" name="editGroup" finished-at="2024-10-10T13:18:13 IST" duration-ms="4524" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editGroup -->
-        <test-method signature="editedgroupongrid()[pri:6, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:35 IST" name="editedgroupongrid" finished-at="2024-09-05T17:06:41 IST" duration-ms="6229" status="PASS">
+        <test-method signature="editedgroupongrid()[pri:6, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:13 IST" name="editedgroupongrid" finished-at="2024-10-10T13:18:19 IST" duration-ms="6023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editedgroupongrid -->
-        <test-method signature="deletegroupongrid()[pri:7, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:41 IST" name="deletegroupongrid" finished-at="2024-09-05T17:06:43 IST" duration-ms="2281" status="PASS">
+        <test-method signature="deletegroupongrid()[pri:7, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:19 IST" name="deletegroupongrid" finished-at="2024-10-10T13:18:22 IST" duration-ms="2255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deletegroupongrid -->
-        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:8, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:44 IST" name="createUserTest" data-provider="UserData" finished-at="2024-09-05T17:06:48 IST" duration-ms="4677" status="PASS">
+        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:8, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:22 IST" name="createUserTest" data-provider="UserData" finished-at="2024-10-10T13:18:25 IST" duration-ms="3354" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,23 +76,67 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserTest -->
-        <test-method signature="Usergrid()[pri:9, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:48 IST" name="Usergrid" finished-at="2024-09-05T17:06:55 IST" duration-ms="6630" status="PASS">
+        <test-method signature="Usergrid()[pri:9, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:25 IST" name="Usergrid" finished-at="2024-10-10T13:18:32 IST" duration-ms="6591" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Usergrid -->
-        <test-method signature="edituser()[pri:10, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:06:55 IST" name="edituser" finished-at="2024-09-05T17:07:00 IST" duration-ms="4729" status="PASS">
+        <test-method signature="edituser()[pri:10, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:32 IST" name="edituser" finished-at="2024-10-10T13:18:37 IST" duration-ms="4803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- edituser -->
-        <test-method signature="editUsergrid()[pri:11, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:07:00 IST" name="editUsergrid" finished-at="2024-09-05T17:07:06 IST" duration-ms="6413" status="PASS">
+        <test-method signature="editUsergrid()[pri:11, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:37 IST" name="editUsergrid" finished-at="2024-10-10T13:18:43 IST" duration-ms="6267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editUsergrid -->
-        <test-method signature="deleteuserongrid()[pri:12, instance:testCases.GroupsAndUsersTest@78a287ed]" started-at="2024-09-05T17:07:06 IST" name="deleteuserongrid" finished-at="2024-09-05T17:07:08 IST" duration-ms="1558" status="PASS">
+        <test-method signature="deleteuserongrid()[pri:12, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:43 IST" name="deleteuserongrid" finished-at="2024-10-10T13:18:45 IST" duration-ms="1467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteuserongrid -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.GroupsAndUsersTest@3f363cf5]" started-at="2024-10-10T13:18:45 IST" name="teardown" finished-at="2024-10-10T13:18:46 IST" duration-ms="1798" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- testCases.GroupsAndUsersTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="testCases.loginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.loginPageTest@24d4d7c9]" started-at="2024-10-10T13:16:58 IST" name="setup" finished-at="2024-10-10T13:17:20 IST" duration-ms="22110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="logintextpresence()[pri:1, instance:testCases.loginPageTest@24d4d7c9]" started-at="2024-10-10T13:17:20 IST" name="logintextpresence" finished-at="2024-10-10T13:17:21 IST" duration-ms="1429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintextpresence -->
+        <test-method signature="validloginTest()[pri:2, instance:testCases.loginPageTest@24d4d7c9]" started-at="2024-10-10T13:17:22 IST" name="validloginTest" finished-at="2024-10-10T13:17:24 IST" duration-ms="2504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validloginTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.loginPageTest@24d4d7c9]" started-at="2024-10-10T13:17:27 IST" name="teardown" finished-at="2024-10-10T13:17:29 IST" duration-ms="2851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testCases.loginPageTest -->
+      <class name="testCases.CampaignsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.CampaignsTest@3829ac1]" started-at="2024-10-10T13:18:46 IST" name="setup" finished-at="2024-10-10T13:19:10 IST" duration-ms="23881" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="groupAndUserSetup()[pri:0, instance:testCases.CampaignsTest@3829ac1]" started-at="2024-10-10T13:19:10 IST" name="groupAndUserSetup" finished-at="2024-10-10T13:19:12 IST" duration-ms="1698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- groupAndUserSetup -->
+        <test-method signature="cmapaignPageNavigationTest()[pri:1, instance:testCases.CampaignsTest@3829ac1]" started-at="2024-10-10T13:19:12 IST" name="cmapaignPageNavigationTest" finished-at="2024-10-10T13:19:16 IST" duration-ms="3541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cmapaignPageNavigationTest -->
+        <test-method signature="createCampaignTest()[pri:2, instance:testCases.CampaignsTest@3829ac1]" started-at="2024-10-10T13:19:16 IST" name="createCampaignTest" finished-at="2024-10-10T13:19:16 IST" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCampaignTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.CampaignsTest@3829ac1]" started-at="2024-10-10T13:19:16 IST" name="teardown" finished-at="2024-10-10T13:19:16 IST" duration-ms="494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testCases.CampaignsTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

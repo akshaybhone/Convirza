@@ -74,5 +74,27 @@ public class Dataproviders {
 		return userdata; //returning two dimensional array
 	}
 	
+	@DataProvider(name="CampaignsData")
+	public String [][] getcampaignsdata() throws IOException
+	{
+		String path = ".\\testdata\\campaigns_page.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("campaign_details");
+		int totalcols = xlutil.getCellCount("campaign_details", 1);
+		
+		String campaigndata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				campaigndata [i-1][j]= xlutil.getCellData("campaign_details", i, j);
+			}
+		}
+		
+		return campaigndata; //returning two dimensional array
+	}
+	
 
 }

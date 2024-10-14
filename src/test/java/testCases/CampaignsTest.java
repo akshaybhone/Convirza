@@ -34,6 +34,8 @@ public class CampaignsTest extends BaseTest {
 	@Test(priority = 2, enabled = true)
 	public void createCampaignTest() {
 		campaignsPage.ClickOnCreateButton();
+		System.out.println(" ");
+		// Changes done on 14/10/2024
 		
 		
 	}

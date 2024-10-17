@@ -330,7 +330,7 @@ public class GroupsAndUserPage {
 
 			GroupName.sendKeys(editedGroupName);
 		} catch (Exception e) {
-			System.out.println("user is unable to click on grouupname");
+			System.out.println("user is unable to enter in grouupname text");
 		}
 
 	}

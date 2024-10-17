@@ -3,10 +3,39 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="testCases.GroupsAndUsersTest">
+        <methods>
+          <include name="deleteuserongrid"/>
+          <include name="groupgrid"/>
+          <include name="createUserTest"/>
+          <include name="editGroup"/>
+          <include name="deletegroupongrid"/>
+          <include name="groupsAndUserPageNavigationTest"/>
+          <include name="groupsAndUserHeaderTest"/>
+          <include name="Usergrid"/>
+          <include name="createGroupTest"/>
+          <include name="editUsergrid"/>
+          <include name="groupAndUserSetup"/>
+          <include name="editedgroupongrid"/>
+          <include name="edituser"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- testCases.GroupsAndUsersTest -->
+      <class name="testCases.CampaignsTest">
+        <methods>
+          <include name="cmapaignPageNavigationTest"/>
+          <include name="createCampaignTest"/>
+          <include name="groupAndUserSetup"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- testCases.CampaignsTest -->
       <class name="testCases.loginPageTest">
         <methods>
           <include name="logintextpresence"/>
           <include name="setup"/>
+          <include name="teardown"/>
           <include name="validloginTest"/>
         </methods>
       </class> <!-- testCases.loginPageTest -->

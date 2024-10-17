@@ -5,9 +5,12 @@
     <classes>
       <class name="testCases.CampaignsTest">
         <methods>
-          <include name="cmapaignPageNavigationTest"/>
+          <include name="editCampaign"/>
+          <include name="editedcampaignongrid"/>
           <include name="groupAndUserSetup"/>
+          <include name="campaignGrid"/>
           <include name="setup"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- testCases.CampaignsTest -->
     </classes>

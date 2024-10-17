@@ -75,7 +75,7 @@ public class BaseTest {
 	@AfterClass
 	public void teardown() {
 
-		driver.close();
+	//	driver.close();
 	}
 
 	public static String RandomeString() {

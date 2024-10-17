@@ -47,8 +47,9 @@ public class ElementUtils {
 		//List<WebElement> drodownlist = locator;
 		System.out.println("Size of the dropdown list is:"+ locator.size());
 		System.out.println("DropDown options are: ");
+		//System.out.println(value);
 		for(WebElement e : locator) {
-			//System.out.println(e.getText());
+			System.out.println(e.getText());
 			if(e.getText().equalsIgnoreCase(value)) {
 				System.out.println(e.getText());
 				javascriptutils.clickOnElement(e);

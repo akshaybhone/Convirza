@@ -16,18 +16,17 @@ import utilities.JavaScriptUtils;
 public class CampaignsPage  {
 	
 	public WebDriver driver;
-	public JavascriptExecutor jsExecutor;
+	//public JavascriptExecutor jsExecutor;
 	public ElementUtils elementutils;
-	public JavaScriptUtils javascriptutils;;
+	public JavaScriptUtils javascriptutils;
 
 	public  CampaignsPage(WebDriver driver) {
 		
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		elementutils = new ElementUtils(driver);
-		jsExecutor = (JavascriptExecutor) driver;
+		//jsExecutor = (JavascriptExecutor) driver;
 		javascriptutils = new JavaScriptUtils(driver);
-		
 	}
 	
 	@FindBy(xpath = "//p[text()='Campaigns']")
@@ -42,7 +41,7 @@ public class CampaignsPage  {
 	WebElement SuccessText;
 	@FindBy(xpath = "//div[text()='Create another campaign']")
 	WebElement CreateAnotherCampaignBtn;
-	@FindBy(xpath = "//input[@id='mat-input-7']")
+	@FindBy(xpath = "(//input[@placeholder='Select'])[1]")
 	WebElement Ownerdropdown;
 	@FindBy(xpath = "//span[@class='mat-option-text']")
 	List<WebElement> ListOfowner;
@@ -66,11 +65,16 @@ public class CampaignsPage  {
 	WebElement ConfirmArchiveButton;
 	@FindBy(xpath = "(//p[text()='Campaign is Archived.'])[1]")
 	WebElement campaignArchive_Toast_Message;
+	@FindBy(xpath = "//button[text()='Clear all']")
+	WebElement ClearAllBtn;
+	
 	
 	
 	By Next_button = By.xpath("//div[text()='Next']");
 	By Campaignname_dropdown = By.xpath("//input[@name='filterValue']");
 	By CampaignName_Grid = By.xpath("//td[@class='cdk-cell cdk-column-campaign_name ng-star-inserted']");
+	By ClearAll_Btn = By.xpath("//button[text()='Clear all']");
+	
 	
 	public String campaignName= "TestCampaign_" + BaseTest.RandomeAlphanumeric();
 	public String newcampaignName= "NewTestCampaign_" + BaseTest.RandomeAlphanumeric();
@@ -173,6 +177,17 @@ public class CampaignsPage  {
 			System.out.println("user is unable to click on cross button");
 		}
 	}
+	public void clickOnClearAllBtn() {
+		try {
+			elementutils.waitToDisplayElement(ClearAll_Btn);
+			javascriptutils.scrollIntoView(ClearAllBtn);
+			Thread.sleep(2000);
+			ClearAllBtn.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on next button");
+		}
+	}
+	
 	public void clickOnCampaignFilter() {
 		try {
 			Campaignfilter.click();
@@ -289,4 +304,5 @@ public class CampaignsPage  {
 		}
 
 	}
+	
 }

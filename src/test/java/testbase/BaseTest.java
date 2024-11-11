@@ -16,6 +16,8 @@ import pageObjects.CampaignsPage;
 import pageObjects.DashboardPage;
 import pageObjects.GroupsAndUserPage;
 import pageObjects.LoginPage;
+import pageObjects.TrackingNumbersPage;
+import testCases.CampaignsTest;
 
 public class BaseTest {
 
@@ -25,10 +27,11 @@ public class BaseTest {
 	public GroupsAndUserPage groupsanduserpage;
 	public DashboardPage dashboardpage;
 	public CampaignsPage campaignsPage;
+	public TrackingNumbersPage trackingNumbersPage;
 
 	// Use below code when XML file is to Run
 	/*
-	 * @BeforeClass
+	 * @BeforeClasss
 	 * 
 	 * @Parameters({ "os", "browser" }) public void setup(String os, String br)
 	 * throws IOException {
@@ -51,6 +54,8 @@ public class BaseTest {
 	 * driver.get("https://www.facebook.com/"); driver.manage().window().maximize();
 	 * }
 	 */
+	
+	
 	// Use below code when individual class is to be Run
 
 	@BeforeClass
@@ -67,7 +72,7 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		// driver.get("https://stag-5-cai.convirza.com/login");
 
-		driver.get(p.getProperty("appBetaURL"));
+		driver.get(p.getProperty("appProdURL"));
 		// driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 	}

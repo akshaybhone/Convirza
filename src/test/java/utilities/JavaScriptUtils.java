@@ -8,14 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 public class JavaScriptUtils {
 	
 	public WebDriver driver;
-
+	public JavascriptExecutor jsExecutor;
 	// Constructor
 	public JavaScriptUtils(WebDriver driver) {
 		//super(driver);
 
 		this.driver=driver; 
 		PageFactory.initElements(driver, this);
-		 
+		jsExecutor = (JavascriptExecutor) driver; 
 	}
 
 	public void scrollPageDown() {

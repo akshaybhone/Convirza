@@ -3,16 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.CampaignsTest">
+      <class name="testCases.TrackingNumbersTest">
         <methods>
-          <include name="editCampaign"/>
-          <include name="editedcampaignongrid"/>
-          <include name="groupAndUserSetup"/>
-          <include name="campaignGrid"/>
+          <include name="trackingNumberssetup"/>
           <include name="setup"/>
           <include name="teardown"/>
+          <include name="TrackingNumberGrid"/>
         </methods>
-      </class> <!-- testCases.CampaignsTest -->
+      </class> <!-- testCases.TrackingNumbersTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

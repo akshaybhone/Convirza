@@ -50,13 +50,13 @@ public class CampaignsTest extends BaseTest {
 		campaignsPage.selectOwner(owner);
 		campaignsPage.clickOnNextButton();
 		Assert.assertEquals(campaignsPage.newSetSuccessMessage(), campaignsPage.getSuccessMessage());
-		campaignsPage.clickOcrossbutton();
+		//campaignsPage.clickOcrossbutton();
 	}
 	
 	@Description("To verify created campaign is present on grid or not.")
 	@Test(priority = 4, enabled = true)
 	public void campaignGrid() {
-		//dashboardpage.navigateToCampaignsPageTest();
+		dashboardpage.navigateToCampaignsPageTest();
 		groupsanduserpage.clickOn_FilterButton(); 
 		campaignsPage.clickOnCampaignFilter();
 		campaignsPage.selectCampaignFromDropdown();
@@ -74,6 +74,7 @@ public class CampaignsTest extends BaseTest {
 		campaignsPage.updateCampaignname();
 		campaignsPage.clickOn_SaveButton();
 		Assert.assertEquals(campaignsPage.campaignUpdatetoastMessage_AvailabiltyTest(), true);
+		
 	}
 	
 	@Description("To verify edited campaign is present on grid or not.")

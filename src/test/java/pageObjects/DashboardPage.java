@@ -33,8 +33,10 @@ public class DashboardPage {
 	WebElement logoutbtn;
 
 	@FindBy(xpath = "//div[text()=' Campaigns ']")
-	WebElement Campignspage;
-
+	WebElement Campaigns_page;
+	
+	@FindBy(xpath = "//div[text()=' Tracking numbers ']")
+	WebElement TrackingNumbers_page;
 	public boolean dashboardHeading_AvailabilityTest() {
 		try {
 			boolean dashboardheadingtxt = dashboardHeading.isDisplayed();
@@ -59,9 +61,18 @@ public class DashboardPage {
 	@Step("Navigate to campaigns page")
 	public void navigateToCampaignsPageTest() {
 		try {
-			Campignspage.click();
+			Campaigns_page.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to click on Campaigns module");
+		}
+	}
+	
+	@Step("Navigate to TrackingNumber page")
+	public void navigateToTrackingNumbersPageTest() {
+		try {
+			TrackingNumbers_page.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on TrackingNumbers module");
 		}
 	}
 

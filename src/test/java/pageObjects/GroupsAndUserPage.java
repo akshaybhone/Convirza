@@ -38,6 +38,7 @@ public class GroupsAndUserPage {
 	WebElement GroupsAndUserHeading;
 	@FindBy(xpath = "//div[@class='textStyle']")
 	WebElement Createbutton;
+	
 	@FindBy(xpath = "//div[@class='smText']")
 	WebElement Nextbutton;
 	@FindBy(xpath = "//input[@id='mat-input-1']")
@@ -120,6 +121,7 @@ public class GroupsAndUserPage {
 	
 
 	By eamildropdown = By.xpath("//input[(@name='filterValue') and (@size='0')]");
+	By Create_button = By.xpath("//div[@class='textStyle']");
 
 	public String genaerateGroupname = "AutoGrp" + BaseTest.RandomeNumber();
 	public String editedGroupName = "edit" + genaerateGroupname;
@@ -160,6 +162,7 @@ public class GroupsAndUserPage {
 
 	public void ClickOnCreateButton() {
 		try {
+			elementutils.waitToDisplayElement(Create_button);
 			Createbutton.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to click on create button");

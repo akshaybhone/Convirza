@@ -96,5 +96,52 @@ public class Dataproviders {
 		return campaigndata; //returning two dimensional array
 	}
 	
+	@DataProvider(name="TrackingNumberData")
+	public String [][] getTrackingNumberdata() throws IOException
+	{
+		String path = ".\\testdata\\TrackingNumber_data.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("TN_details");
+		System.out.println(totalrows);
+		int totalcols = xlutil.getCellCount("TN_details", 1);
+		System.out.println(totalcols);
+		
+		String TNdata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				TNdata [i-1][j]= xlutil.getCellData("TN_details", i, j);
+			}
+		}
+		
+		return TNdata; //returning two dimensional array
+	}
+	
+	@DataProvider(name="EditTrackingNumberData")
+	public String [][] editTrackingNumberdata() throws IOException
+	{
+		String path = ".\\testdata\\TrackingNumber_data.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("Edit_TN_details");
+		System.out.println(totalrows);
+		int totalcols = xlutil.getCellCount("Edit_TN_details", 1);
+		System.out.println(totalcols);
+		
+		String TNdata [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				TNdata [i-1][j]= xlutil.getCellData("Edit_TN_details", i, j);
+			}
+		}
+		
+		return TNdata; //returning two dimensional array
+	}
 
 }

@@ -1,5 +1,7 @@
 package pageObjects;
 
+import static org.testng.Assert.fail;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +39,10 @@ public class DashboardPage {
 	
 	@FindBy(xpath = "//div[text()=' Tracking numbers ']")
 	WebElement TrackingNumbers_page;
+	
+	@FindBy(xpath = "//div[text()=' Scorecards ']")
+	WebElement Scorecards_page;
+	
 	public boolean dashboardHeading_AvailabilityTest() {
 		try {
 			boolean dashboardheadingtxt = dashboardHeading.isDisplayed();
@@ -73,6 +79,17 @@ public class DashboardPage {
 			TrackingNumbers_page.click();
 		} catch (Exception e) {
 			System.out.println("user is unable to click on TrackingNumbers module");
+		}
+	}
+	
+	@Step("Navigate to Scorecard page")
+	public void navigateToScorecardsPageTest() {
+		try {
+			
+			Scorecards_page.click();
+		} catch (Exception e) {
+			System.out.println("user is unable to click on Scorecards module");
+			fail("user is unable to click on Scorecards module");
 		}
 	}
 

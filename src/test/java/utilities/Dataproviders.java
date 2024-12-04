@@ -143,5 +143,77 @@ public class Dataproviders {
 		
 		return TNdata; //returning two dimensional array
 	}
+	
+	@DataProvider(name="ScorecardData")
+	public String [][] scorecradsdata() throws IOException
+	{
+		String path = ".\\testdata\\Scorecards.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("Scorecards_details");
+		System.out.println(totalrows);
+		int totalcols = xlutil.getCellCount("Scorecards_details", 1);
+		System.out.println(totalcols);
+		
+		String Scorecard_data [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				Scorecard_data [i-1][j]= xlutil.getCellData("Scorecards_details", i, j);
+			}
+		}
+		
+		return Scorecard_data; //returning two dimensional array
+	}
+	
+	@DataProvider(name="InsightsData")
+	public String [][] insightsdata() throws IOException
+	{
+		String path = ".\\testdata\\Insights.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("Keyword_details");
+		System.out.println(totalrows);
+		int totalcols = xlutil.getCellCount("Keyword_details", 1);
+		System.out.println(totalcols);
+		
+		String Scorecard_data [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				Scorecard_data [i-1][j]= xlutil.getCellData("Keyword_details", i, j);
+			}
+		}
+		
+		return Scorecard_data; //returning two dimensional array
+	}
+	
+	@DataProvider(name="LLM_InsightsData")
+	public String [][] insightsdataLLM() throws IOException
+	{
+		String path = ".\\testdata\\Insights.xlsx"; //Taking Excel file from testdata.
+		
+		ExcelUtility xlutil = new ExcelUtility(path); //creating an object for ExcelUtility.
+		
+		int totalrows = xlutil.getRowCount("UltimateAI_details");
+		System.out.println(totalrows);
+		int totalcols = xlutil.getCellCount("UltimateAI_details", 1);
+		System.out.println(totalcols);
+		
+		String Scorecard_data [][]= new String[totalrows][totalcols];	//created for two dimension array 
+		
+		for (int i = 1; i <= totalrows; i++) {		//i=rows and i=1 coz data is starting from row 2
+			
+			for (int j = 0; j < totalcols; j++) {		// j=columns
+				Scorecard_data [i-1][j]= xlutil.getCellData("UltimateAI_details", i, j);
+			}
+		}
+		
+		return Scorecard_data; //returning two dimensional array
+	}
 
 }

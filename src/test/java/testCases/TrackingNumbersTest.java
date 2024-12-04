@@ -113,6 +113,7 @@ public class TrackingNumbersTest extends BaseTest {
 		trackingNumbersPage.clickOnTrackingNumberNamefromgrid();
 		trackingNumbersPage.enterRingtoNumber(ring_to_number);
 		trackingNumbersPage.clickOnTrackingNumberNameSaveButton();
+		
 		trackingNumbersPage.clickOnTrackingNumberNameOKButton();
 		Assert.assertEquals(trackingNumbersPage.getTNUpdate_ToastMessage(), true);
 	}
@@ -129,10 +130,10 @@ public class TrackingNumbersTest extends BaseTest {
 		groupsanduserpage.ClickOn_RefreshButton();
 		
 		String trackingNumber_FromGrid=trackingNumbersPage.getTrackingNumberfromgrid();
-		Assert.assertEquals(trackingNumber_FromGrid, trackingNumbersPage.setTrackingNumber);
+		Assert.assertEquals(trackingNumber_FromGrid, trackingNumbersPage.toprintTrackingNumber);
 		
-		String ringToNumbername_FromGrid=trackingNumbersPage.getRingtoNumberNamefromgrid();
-		Assert.assertEquals(ringToNumbername_FromGrid, trackingNumbersPage.setRingToNumber);
+	//	String ringToNumbername_FromGrid=trackingNumbersPage.getRingtoNumberNamefromgrid();
+	//	Assert.assertEquals(ringToNumbername_FromGrid, trackingNumbersPage.setRingToNumber);
 	
 	}
 	

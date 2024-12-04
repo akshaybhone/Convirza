@@ -16,6 +16,7 @@ import pageObjects.CampaignsPage;
 import pageObjects.DashboardPage;
 import pageObjects.GroupsAndUserPage;
 import pageObjects.LoginPage;
+import pageObjects.ScorecardsPage;
 import pageObjects.TrackingNumbersPage;
 import testCases.CampaignsTest;
 
@@ -28,7 +29,8 @@ public class BaseTest {
 	public DashboardPage dashboardpage;
 	public CampaignsPage campaignsPage;
 	public TrackingNumbersPage trackingNumbersPage;
-
+	public ScorecardsPage scorecardspage;
+	public InsightsPage insightspage;
 	// Use below code when XML file is to Run
 	/*
 	 * @BeforeClasss
@@ -72,8 +74,8 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		// driver.get("https://stag-5-cai.convirza.com/login");
 
-		driver.get(p.getProperty("appProdURL"));
-		// driver.get("https://www.facebook.com/");
+		driver.get(p.getProperty("appBetaURL"));
+		//driver.get(p.getProperty("appProdURL"));
 		driver.manage().window().maximize();
 	}
 

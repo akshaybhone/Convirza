@@ -23,7 +23,7 @@ public class TrackingNumbersPage {
 		
 	public TrackingNumbersPage(WebDriver driver) {
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this); //@Findby
 		elementutils= new ElementUtils(driver);
 		javascriptutils = new JavaScriptUtils(driver);
 		
@@ -116,7 +116,7 @@ public class TrackingNumbersPage {
 	By TrackingNumber_Grid = By.xpath("//td[@class='cdk-cell cdk-column-tracking_number ng-star-inserted']");
 	By Ok_btn = By.xpath("//span[text()=' OK ']");
 	By TN_UpdateToastMessage = By.xpath("(//p[text()='Tracking number updated successfully.'])[3]");
-	
+	By RingToNumber_Txtfield = By.xpath("(//div[@class='flex']//input)[6]");
 	
 	
 	
@@ -172,7 +172,7 @@ public class TrackingNumbersPage {
 			
 			setTrackingNumber=TrackingNumber.getText();
 			toprintTrackingNumber=setTrackingNumber.replaceAll("[^0-9]", "");
-			System.out.println(setTrackingNumber);
+			System.out.println(toprintTrackingNumber);
 			javascriptutils.clickOnElement(TrackingNumber);
 			
 		//	setTrackingNumber=AvailableNumberdrpdwn.getText();
@@ -356,11 +356,12 @@ public class TrackingNumbersPage {
 		try {
 			this.setRingToNumber=ring_to_number;
 			System.out.println(setRingToNumber);
-			elementutils.waitToDisplayElement(Next_button);
+			//elementutils.waitToDisplayElement(Next_button);
 			javascriptutils.scrollIntoView(RingToNumberTxtfield);
+			elementutils.waitToDisplayElement(RingToNumber_Txtfield);
 			RingToNumberTxtfield.clear();
 			RingToNumberTxtfield.sendKeys(ring_to_number);
-			System.out.println();
+			//System.out.println();
 			//javascriptutils.clickOnElement(TrackingNumberNameFiltertextfield);
 		} catch (Exception e) {
 			System.out.println("user is unable to click on RingToNumber Textfield");

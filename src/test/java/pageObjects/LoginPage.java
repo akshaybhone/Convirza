@@ -1,7 +1,11 @@
 package pageObjects;
 
-import java.time.Duration;
+import static org.testng.Assert.fail;
 
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,9 +13,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.ElementUtils;
+import utilities.JavaScriptUtils;
+
 public class LoginPage  {
 	
 	public WebDriver driver;
+	public JavaScriptUtils javascriptutils;
+	public ElementUtils elementutils;
 	
 	//Constructor
 	public LoginPage(WebDriver driver)
@@ -20,6 +29,8 @@ public class LoginPage  {
 		
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
+		elementutils = new ElementUtils(driver);
+		javascriptutils = new JavaScriptUtils(driver);
 	}
 	
 	//Webelements Locators+identification
@@ -35,6 +46,22 @@ public class LoginPage  {
 	
 	@FindBy(xpath = "//button[normalize-space()='Log in']")
 	WebElement btn_login_loc; 
+	
+	
+	
+	@FindBy(xpath = "//div[@class='AccountdropList']//div")
+	List<WebElement> List_Of_group; 
+	
+	
+	
+	@FindBy(xpath = "//div[@class='AccountdropList']//div")
+	List<WebElement> List_Of_user;
+	
+	@FindBy(xpath = "//button[normalize-space()='Impersonate']")
+	WebElement Impersonate_btn; 
+	
+	
+	
 	
 	/*fb
 	
@@ -94,6 +121,54 @@ public class LoginPage  {
 		
 		
 	}
+	
+	public void supportAdmin_Login(String username,String password,String group,String user) throws InterruptedException {
+		//driver.findElement(txt_password_loc).sendKeys(password);
+		txt_username_loc.clear();
+		txt_username_loc.sendKeys(username);
+		txt_password_loc.clear();
+		txt_password_loc.sendKeys(password);
+		btn_login_loc.click();
+		select_group(group);
+		select_user(user);
+		Impersonate_btn.click();
+	}
+	
+	@FindBy(xpath = "//input[@placeholder='Search groups']")
+	WebElement group_dropdown; 
+	@FindBy(xpath = "(//div[@class='AccountdropList'])//div") //div[text()=' Convirza-Live 'and @class='ng-star-inserted']
+	WebElement groupname_option;
+	
+	
+	public void select_group(String groupname) throws InterruptedException {
+		// javascriptutils.scrollIntoView(ParentGroupdropdown);
+		try {
+			elementutils.select_DropdownValue_BySendkeys(group_dropdown, groupname, groupname_option);
+		} catch (Exception e) {
+			fail("user is unable to select group while login");
+		}
+		
+	}
+	
+	@FindBy(xpath = "//input[@placeholder='Search users']")
+	WebElement user_dropdown;
+	@FindBy(xpath = "(//div[@class='AccountdropList'])//div")
+	WebElement user_option;
+
+	By user_spinner = By.xpath("//span[@class='spinner-border spinner-border-sm mr-1']");
+	
+	public void select_user(String user) throws InterruptedException {
+		
+		try {
+			//elementutils.waitTillElementHide(user_spinner);
+			elementutils.select_DropdownValue_BySendkeys(user_dropdown, user, user_option);
+		} catch (Exception e) {
+			fail("user is unable to select groupuser while login");
+		}
+
+	}
+	
+	
 	
 	/*public DashboardPage doLogin(String username,String password) {
 		//driver.findElement(txt_password_loc).sendKeys(password);

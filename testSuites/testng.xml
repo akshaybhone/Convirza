@@ -6,9 +6,23 @@
 			<class name="testCases.loginPageTest" />
 			<class name="testCases.GroupsAndUsersTest" />
 			<class name="testCases.CampaignsTest" />
-
 		</classes>
 	</test> <!--
-	Test -->
+	
+	<test thread-count="5" name="Test">
+		<classes>
+			
+			<class name="testCases.GroupsAndUsersTest" />
+			
+
+		</classes>
+	</test>
+	<test thread-count="5" name="Test">
+		<classes>
+			
+			<class name="testCases.CampaignsTest" />
+
+		</classes>
+	</test>Test -->
 </suite> <!--
 Suite -->

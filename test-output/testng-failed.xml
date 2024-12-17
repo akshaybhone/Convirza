@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.CampaignsTest">
-        <methods>
-          <include name="cmapaignPageNavigationTest"/>
-          <include name="runTimesetup"/>
-          <include name="createCampaignTest"/>
-          <include name="editCampaign"/>
-          <include name="createCampaignTest_fromcreateanothercampaignbutton"/>
-          <include name="editedcampaignongrid"/>
-          <include name="groupAndUserSetup"/>
-          <include name="deletegroupongrid"/>
-          <include name="campaignGrid"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- testCases.CampaignsTest -->
       <class name="testCases.GroupsAndUsersTest">
         <methods>
-          <include name="deleteuserongrid"/>
-          <include name="groupgrid"/>
-          <include name="createUserTest"/>
           <include name="runTimesetup"/>
-          <include name="editGroup"/>
-          <include name="deletegroupongrid"/>
           <include name="groupsAndUserPageNavigationTest"/>
-          <include name="groupsAndUserHeaderTest"/>
-          <include name="Usergrid"/>
-          <include name="createGroupTest"/>
-          <include name="editUsergrid"/>
           <include name="groupAndUserSetup"/>
-          <include name="editedgroupongrid"/>
-          <include name="edituser"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- testCases.GroupsAndUsersTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

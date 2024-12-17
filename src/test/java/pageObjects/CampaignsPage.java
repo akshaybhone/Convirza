@@ -96,6 +96,7 @@ public class CampaignsPage  {
 		try {
 			Campaigncreatebtn.click();
 		} catch (Exception e) {
+		
 			System.out.println("user is unable to click on create button");
 		}
 	}

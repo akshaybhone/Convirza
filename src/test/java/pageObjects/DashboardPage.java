@@ -58,6 +58,7 @@ public class DashboardPage {
 	public void navigateToGroupsAndUserPageTest() {
 		try {
 			groupanduser.click();
+			
 		} catch (Exception e) {
 			System.out.println("user is unable to click on Groupanduser module");
 		}
